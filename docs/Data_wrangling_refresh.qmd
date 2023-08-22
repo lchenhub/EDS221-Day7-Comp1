@@ -75,3 +75,7 @@ penguins %>%
 
 penguins %>%  count (species, island, sex)
 ```
+
+## Datapasta
+
+Make sure to install packages in console, not in the quarto doc. Otherwise it would reinstall each time (install.packages("datapasta")
