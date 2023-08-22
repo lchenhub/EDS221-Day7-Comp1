@@ -81,3 +81,42 @@ penguins %>%  count (species, island, sex)
 Make sure to install packages in console, not in the quarto doc. Otherwise it would reinstall each time (install.packages("datapasta")
 
 When you install a new package, you need to restart R. so make sure to save, pull, push
+
+Restart R Studio. Now you have an "Addins" function up top!
+
+WIth this package, you can copy/paste a table from web using the Addins dropdown
+
+```{r}
+animals <- data.frame(
+  stringsAsFactors = FALSE,
+          location = c("lagoon", "bluff", "creek", "oaks", "bluff"),
+           species = c("bobcat", "coyote", "fox", "squirrel", "bobcat"),
+          maturity = c("adult", "juvenile", "adult", "juvenile", "adult")
+)
+```
+
+```{r}
+sites <- data.frame(
+  stringsAsFactors = FALSE, #this means just read in data as characters
+          location = c("beach", "lagoon", "bluff", "oaks"),
+    full_site_name = c("Goleta Beach","UCSB Lagoon",
+                       "Ellwood Mesa","Fremont Campground"),
+      jurisdiction = c("SB City", "UCSB", "SB City", "USFS")
+)
+```
+
+## Now we're going to JOIN TABLES!!
+
+### [Full Join]{.underline}
+
+```{r}
+full_join_example <- full_join(animals, sites)
+```
+
+```{r}
+left_join_example <- left_join(animals, sites)
+```
+
+```{r}
+inner_join_example <- inner_join(animals, sites)
+```
